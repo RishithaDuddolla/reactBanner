@@ -1,17 +1,23 @@
-import {Login} from '/src/components/Login'
-import {Component} from 'react'
+import './index.css'
 
-class Logout extends Component{
-onclickButton = () => {
-  this.setState(prevstate => ({islogin: !prevstate.islogin}))
-}
-render(){
+const Logout = props => {
+  const {onLogout} = props
+
+  const onClickLogoutButton = () => {
+    onLogout()
+  }
+
   return (
-    <button classname="btn" type="button" onClick={onclickButton()}>
-      Logout
-    </button>
+    <div className="logout-container">
+      <button
+        className="logout-button"
+        type="button"
+        onClick={onClickLogoutButton}
+      >
+        Logout
+      </button>
+    </div>
   )
-}
 }
 
 export default Logout

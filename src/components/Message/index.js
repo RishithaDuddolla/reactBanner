@@ -1,26 +1,17 @@
-import {Component} from 'react'
-import {Home} from 'src/components/Home'
 import './index.css'
 
-class Message extends Home {
-  constructor() {
-    const {islogin} = props
-  }
+const Message = props => {
+  const {isLoggedIn} = props
 
-  messagerender = () => {
-    let message
-    if (this.islogin == true) {
-      message = 'Logout'
-    } else {
-      message = 'Login'
-    }
-    return message
-  }
-
-  render() {
-    const {message} = messagerender()
-    return <h1 className="h1">{message}</h1>
-  }
+  return (
+    <div className="message-container">
+      {isLoggedIn ? (
+        <p className="welcome-message">Please Login</p>
+      ) : (
+        <p className="welcome-message">Welcome User</p>
+      )}
+    </div>
+  )
 }
 
 export default Message

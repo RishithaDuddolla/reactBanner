@@ -1,23 +1,31 @@
 import {Component} from 'react'
+import Login from '../Login'
+import Logout from '../Logout'
+import Message from '../Message'
 import './index.css'
-import {Message} from 'src/components/Message/index.js'
-import {Login} from 'src/components/Login/index.js'
-import {Logout} from 'src/components/Logout/index.js'
+
 class Home extends Component {
-  constructor(props) {
-    super(props)
-    state = {islogin: flase}
+  state = {isLoggedIn: false,setIsLoggedIn: false}
+
+  handleLogin = () => {
+    this.setState(prev => ({isLoggedIn: !prev.isLoggedIn}))
   }
-  onclickButton = () => {
-    this.setState(prevstate => ({islogin: !prevstate.islogin}))
+
+  handleLogout = () => {
+    this.setState(prev => ({isLoggedIn: !prev.isLoggedIn}))
   }
+
   render() {
-    const {islogin} = this.state
+    const {isLoggedIn} = this.state
     return (
-      <div className="bg">
-        <div class="card">
-          {<Message islogin={islogin} />}
-          {islogin ? <Logout islogin={islogin} /> : <Login islogin={islogin} />}
+      <div className="app-container">
+        <div className="card">
+          <Message isLoggedIn={isLoggedIn} />
+          {isLoggedIn ? (
+            <Logout onLogout={this.handleLogout} />
+          ) : (
+            <Login onLogin={this.handleLogin} />
+          )}
         </div>
       </div>
     )
