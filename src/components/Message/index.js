@@ -6,9 +6,9 @@ const Message = props => {
   return (
     <div className="message-container">
       {isLoggedIn ? (
-        <p className="welcome-message">Please Login</p>
-      ) : (
         <p className="welcome-message">Welcome User</p>
+      ) : (
+        <p className="welcome-message">Please Login</p>
       )}
     </div>
   )

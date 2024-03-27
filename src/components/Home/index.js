@@ -5,7 +5,7 @@ import Message from '../Message'
 import './index.css'
 
 class Home extends Component {
-  state = {isLoggedIn: false,setIsLoggedIn: false}
+  state = {isLoggedIn: false}
 
   handleLogin = () => {
     this.setState(prev => ({isLoggedIn: !prev.isLoggedIn}))

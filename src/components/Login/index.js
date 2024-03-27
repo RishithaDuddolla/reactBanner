@@ -1,17 +1,14 @@
-import {useState} from 'react'
 import './index.css'
 
 const Login = props => {
   const {onLogin} = props
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const onClickLoginButton = () => {
-    setIsLoggedIn(true)
     onLogin()
   }
 
   return (
-    <div className="login-container">
+    <div>
       <button
         className="login-button"
         type="button"

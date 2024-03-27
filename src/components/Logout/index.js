@@ -8,7 +8,7 @@ const Logout = props => {
   }
 
   return (
-    <div className="logout-container">
+    <div>
       <button
         className="logout-button"
         type="button"
